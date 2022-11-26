@@ -1,0 +1,72 @@
+:root {
+  --primary-text-color: black;
+  --marginals-background-color: #333;
+  --marginals-text-color: white;
+  --main-background-color: #c5c5c5;
+}
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  list-style: none;
+}
+
+.fullApp {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template: 100px 1fr 40px / 1fr;
+}
+
+header {
+  grid-area: 1/1/2/2;
+  background-color: var(--marginals-background-color);
+  color: var(--marginals-text-color);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  padding: 0 8px;
+  z-index: 50;
+}
+
+.headerContent {
+  height: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.headerContent h1 {
+  font-size: 3rem;
+}
+
+main {
+  grid-area: 2/1/3/2;
+  background-color: var(--main-background-color);
+}
+
+footer {
+  grid-area: 3/1/4/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--marginals-background-color);
+  color: var(--marginals-text-color);
+}
+
+footer a:link,
+footer a:visited,
+footer a:active {
+  padding: 2px;
+  text-decoration: none;
+  color: var(--marginals-text-color);
+  font-weight: 700;
+}
+
+footer a:hover {
+  filter: brightness(.8);
+}
