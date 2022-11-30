@@ -7,9 +7,23 @@ class CVForm extends Component {
   }
 
   render() {
+    const {
+      info,
+      changeInfo,
+    } = this.props;
+
     return (
-      <div>
-        
+      <div className="CVForm">
+        <form className="info">
+          <label htmlFor="infoName">Name</label>
+          <input
+            onChange={changeInfo}
+            value={info.name}
+            type="text"
+            name="name"
+            id="infoName"
+          />
+        </form>
       </div> 
     );
   }

@@ -7,9 +7,11 @@ class CVDisplay extends Component {
   }
 
   render() {
+    const { info } = this.props;
+
     return (
-      <div>
-        
+      <div className="CVDisplay">
+        <p>{info.name}</p>
       </div> 
     );
   }
