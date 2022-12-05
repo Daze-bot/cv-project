@@ -17,7 +17,7 @@ class Main extends Component {
         email: '',
         website: '',
         description: '',
-        photoURL: Stock,
+        avatar: Stock,
       },
       experience: {
         id: uniqid(),
@@ -41,12 +41,22 @@ class Main extends Component {
     }
 
     this.handleInfoChange = this.handleInfoChange.bind(this);
+    this.handleExperienceChange = this.handleExperienceChange.bind(this);
   }
 
   handleInfoChange(e) {
     this.setState((state) => ({
       info: {
         ...state.info,
+        [e.target.name]: e.target.value,
+      }
+    }));
+  }
+
+  handleExperienceChange(e, id) {
+    this.setState((state) => ({
+      experience: {
+        ...state.experience,
         [e.target.name]: e.target.value,
       }
     }));

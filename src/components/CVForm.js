@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
+import Info from "./Info";
 
 class CVForm extends Component {
   constructor(props) {
@@ -14,16 +15,10 @@ class CVForm extends Component {
 
     return (
       <div className="CVForm">
-        <form className="info">
-          <label htmlFor="infoName">Name</label>
-          <input
-            onChange={changeInfo}
-            value={info.name}
-            type="text"
-            name="name"
-            id="infoName"
-          />
-        </form>
+        <Info
+          info={info}
+          changeInfo={changeInfo}
+        />
       </div> 
     );
   }

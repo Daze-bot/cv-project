@@ -3,6 +3,7 @@
   --marginals-background-color: #333;
   --marginals-text-color: white;
   --main-background-color: #c5c5c5;
+  --secondary-background-color: #e4e4e4;
 }
 
 * {
@@ -17,6 +18,7 @@
 
 .fullApp {
   min-height: 100vh;
+  max-height: 100vh;
   position: relative;
   display: grid;
   grid-template: 100px 1fr 40px / 1fr;
@@ -47,10 +49,85 @@ header {
 main {
   grid-area: 2/1/3/2;
   background-color: var(--main-background-color);
-  padding: 20px;
+  padding: 30px;
   display: grid;
   grid-template: 1fr / 1fr 1fr;
   gap: 40px;
+  overflow: hidden;
+}
+
+.CVForm,
+.CVDisplay {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: var(--secondary-background-color);
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.CVForm input,
+.CVForm label,
+.CVForm textarea,
+.CVForm p {
+  display: block;
+  width: 100%;
+}
+
+.CVForm label {
+  margin-top: 8px;
+}
+
+.CVForm .entry {
+  outline: none;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.CVForm textarea {
+  resize: none;
+}
+
+.CVForm .entry:hover {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.CVForm .entry:focus {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+}
+
+.CVForm #infoAvatar {
+  padding: 4px 8px;
+}
+
+.CVForm ::file-selector-button {
+  outline: none;
+  border: solid 1px black;
+  border-radius: 6px;
+  background-color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.CVForm ::file-selector-button:hover {
+  filter: brightness(.85);
+}
+
+.CVForm ::file-selector-button:active {
+  filter: brightness(1);
+}
+
+.personalInfo {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.personalInfo p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-decoration: underline;
 }
 
 footer {
