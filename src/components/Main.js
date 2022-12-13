@@ -25,7 +25,7 @@ class Main extends Component {
       experience: [
         {
           id: uniqid(),
-          name: '',
+          company: '',
           location: '',
           title: '',
           start: '',
@@ -35,7 +35,7 @@ class Main extends Component {
       ],
       experienceItem: {
         id: uniqid(),
-        name: '',
+        company: '',
         location: '',
         title: '',
         start: '',
@@ -45,7 +45,7 @@ class Main extends Component {
       education: [
         {
           id: uniqid(),
-          name: '',
+          school: '',
           location: '',
           degree: '',
           start: '',
@@ -54,7 +54,7 @@ class Main extends Component {
       ],
       educationItem: {
         id: uniqid(),
-        name: '',
+        school: '',
         location: '',
         degree: '',
         start: '',
