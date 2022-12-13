@@ -34,6 +34,33 @@ class Info extends Component {
             name="address"
             id="infoAddress"
           />
+          <label htmlFor="infoCity">City</label>
+          <input
+            className="entry"
+            onChange={changeInfo}
+            value={info.city}
+            type="text"
+            name="city"
+            id="infoCity"
+          />
+          <label htmlFor="infoState">State</label>
+          <input
+            className="entry"
+            onChange={changeInfo}
+            value={info.state}
+            type="text"
+            name="state"
+            id="infoState"
+          />
+          <label htmlFor="infoZip">Zip Code</label>
+          <input
+            className="entry"
+            onChange={changeInfo}
+            value={info.zip}
+            type="text"
+            name="zip"
+            id="infoZip"
+          />
           <label htmlFor="infoPhone">Phone</label>
           <input
             className="entry"

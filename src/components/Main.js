@@ -13,13 +13,27 @@ class Main extends Component {
       info: {
         name: '',
         address: '',
+        city: '',
+        state: '',
+        zip: '',
         phone: '',
         email: '',
         website: '',
         description: '',
         avatar: Stock,
       },
-      experience: {
+      experience: [
+        {
+          id: uniqid(),
+          name: '',
+          location: '',
+          title: '',
+          start: '',
+          end: '',
+          description: '',
+        },
+      ],
+      experienceItem: {
         id: uniqid(),
         name: '',
         location: '',
@@ -28,8 +42,17 @@ class Main extends Component {
         end: '',
         description: '',
       },
-      experiences: [],
-      education: {
+      education: [
+        {
+          id: uniqid(),
+          name: '',
+          location: '',
+          degree: '',
+          start: '',
+          end: '',
+        }
+      ],
+      educationItem: {
         id: uniqid(),
         name: '',
         location: '',
@@ -37,7 +60,6 @@ class Main extends Component {
         start: '',
         end: '',
       },
-      educations: [],
     }
 
     this.handleInfoChange = this.handleInfoChange.bind(this);
@@ -51,6 +73,8 @@ class Main extends Component {
         [e.target.name]: e.target.value,
       }
     }));
+
+    console.log(this.state);
   }
 
   handleExperienceChange(e, id) {

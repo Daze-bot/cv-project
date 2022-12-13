@@ -14,6 +14,7 @@ class CVDisplay extends Component {
         {/* Replace all of this once Input Forms are done.  Used for testing inputs */}
         <p>{info.name}</p>
         <p>{info.address}</p>
+        <p>{info.city}, {info.state} {info.zip}</p>
         <p>{info.phone}</p>
         <p>{info.email}</p>
         <p>{info.website}</p>
