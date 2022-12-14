@@ -10,15 +10,18 @@ class ExperienceItem extends Component {
     const {
       experience,
       changeExperience,
+      id,
+      index
     } = this.props;
 
     return (
       <form className="experienceForm">
+        <p>Experience {index + 1}</p>
         <label htmlFor="expCompany">Company</label>
         <input
           className="entry"
-          onChange={changeExperience}
-          value={experience.name}
+          onChange={(e) => changeExperience(e, id)}
+          value={experience.company}
           type="text"
           name="company"
           id="expCompany"
@@ -26,8 +29,8 @@ class ExperienceItem extends Component {
         <label htmlFor="expLocation">Location</label>
         <input
           className="entry"
-          onChange={changeExperience}
-          value={experience.address}
+          onChange={(e) => changeExperience(e, id)}
+          value={experience.location}
           type="text"
           name="location"
           id="expLocation"
@@ -35,8 +38,8 @@ class ExperienceItem extends Component {
         <label htmlFor="expTitle">Title</label>
         <input
           className="entry"
-          onChange={changeExperience}
-          value={experience.city}
+          onChange={(e) => changeExperience(e, id)}
+          value={experience.title}
           type="text"
           name="title"
           id="expTitle"
@@ -44,8 +47,8 @@ class ExperienceItem extends Component {
         <label htmlFor="expStart">Start Date</label>
         <input
           className="entry"
-          onChange={changeExperience}
-          value={experience.state}
+          onChange={(e) => changeExperience(e, id)}
+          value={experience.start}
           type="text"
           name="start"
           id="expStart"
@@ -53,8 +56,8 @@ class ExperienceItem extends Component {
         <label htmlFor="expEnd">End Date</label>
         <input
           className="entry"
-          onChange={changeExperience}
-          value={experience.zip}
+          onChange={(e) => changeExperience(e, id)}
+          value={experience.end}
           type="text"
           name="end"
           id="expEnd"
@@ -62,7 +65,7 @@ class ExperienceItem extends Component {
         <label htmlFor="expDescription">Description</label>
         <textarea
           className="entry"
-          onChange={changeExperience}
+          onChange={(e) => changeExperience(e, id)}
           value={experience.description}
           type="text"
           name="description"

@@ -33,15 +33,6 @@ class Main extends Component {
           description: '',
         },
       ],
-      experienceItem: {
-        id: uniqid(),
-        company: '',
-        location: '',
-        title: '',
-        start: '',
-        end: '',
-        description: '',
-      },
       education: [
         {
           id: uniqid(),
@@ -52,14 +43,6 @@ class Main extends Component {
           end: '',
         }
       ],
-      educationItem: {
-        id: uniqid(),
-        school: '',
-        location: '',
-        degree: '',
-        start: '',
-        end: '',
-      },
     }
 
     this.handleInfoChange = this.handleInfoChange.bind(this);
@@ -73,27 +56,30 @@ class Main extends Component {
         [e.target.name]: e.target.value,
       }
     }));
-
-    console.log(this.state);
   }
 
   handleExperienceChange(e, id) {
-    this.setState((state) => ({
-      experience: {
-        ...state.experience,
-        [e.target.name]: e.target.value,
-      }
-    }));
+    this.setState((state) => {
+      const experienceEdit = state.experience.map((item) => {
+        if (id === item.id) {
+          return { ...item, [e.target.name]: e.target.value };
+        }
+        return item;
+      });
+      return { experience: [...experienceEdit] };
+    });
   }
 
   render() {
-    const { info } = this.state;
+    const { info, experience } = this.state;
 
     return (
       <main>
         <CVForm 
           info={info}
-          changeInfo={this.handleInfoChange}       
+          changeInfo={this.handleInfoChange}
+          experience={experience}   
+          changeExperience={this.handleExperienceChange}    
         />
         <CVDisplay 
           info={info}

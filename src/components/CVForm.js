@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
+import Experience from "./Experience";
 import Info from "./Info";
 
 class CVForm extends Component {
@@ -11,6 +12,8 @@ class CVForm extends Component {
     const {
       info,
       changeInfo,
+      experience,
+      changeExperience,
     } = this.props;
 
     return (
@@ -18,6 +21,10 @@ class CVForm extends Component {
         <Info
           info={info}
           changeInfo={changeInfo}
+        />
+        <Experience
+          experience={experience}
+          changeExperience={changeExperience}
         />
       </div> 
     );

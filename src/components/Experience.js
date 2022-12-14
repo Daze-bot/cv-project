@@ -13,10 +13,20 @@ class Experience extends Component {
       changeExperience,
     } = this.props;
 
+    let experienceItems = experience.map((item, index) => (
+      <ExperienceItem
+        index={index}
+        key={item.id}
+        id={item.id}
+        experience={item}
+        changeExperience={changeExperience} 
+      />
+    ));
+
     return (
       <div className="experienceHistory">
         <p>Experience</p>
-          <ExperienceItem />
+        {experienceItems}
       </div>
     );
   }
