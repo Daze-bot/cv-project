@@ -41,7 +41,7 @@ class Main extends Component {
           degree: '',
           start: '',
           end: '',
-        }
+        },
       ],
     }
 
@@ -70,6 +70,23 @@ class Main extends Component {
     });
   }
 
+  handleAddExperience() {
+    this.setState((state) => ({
+      experience: [
+        ...state.experience,
+        {
+          id: uniqid(),
+          company: '',
+          location: '',
+          title: '',
+          start: '',
+          end: '',
+          description: '',
+        },
+      ],
+    }));
+  }
+
   render() {
     const { info, experience } = this.state;
 
@@ -79,7 +96,8 @@ class Main extends Component {
           info={info}
           changeInfo={this.handleInfoChange}
           experience={experience}   
-          changeExperience={this.handleExperienceChange}    
+          changeExperience={this.handleExperienceChange}
+          addExperience={this.handleAddExperience}    
         />
         <CVDisplay 
           info={info}
