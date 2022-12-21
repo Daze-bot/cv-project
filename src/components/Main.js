@@ -47,6 +47,8 @@ class Main extends Component {
 
     this.handleInfoChange = this.handleInfoChange.bind(this);
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
+    this.handleAddExperience = this.handleAddExperience.bind(this);
+    this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
   }
 
   handleInfoChange(e) {
@@ -60,11 +62,11 @@ class Main extends Component {
 
   handleExperienceChange(e, id) {
     this.setState((state) => {
-      const experienceEdit = state.experience.map((item) => {
-        if (id === item.id) {
-          return { ...item, [e.target.name]: e.target.value };
+      const experienceEdit = state.experience.map((exp) => {
+        if (id === exp.id) {
+          return { ...exp, [e.target.name]: e.target.value };
         }
-        return item;
+        return exp;
       });
       return { experience: [...experienceEdit] };
     });
@@ -87,6 +89,13 @@ class Main extends Component {
     }));
   }
 
+  handleDeleteExperience(id) {
+    this.setState((state) => {
+      const tempExperience = state.experience.filter((exp) => exp.id !== id);
+      return { experience: [...tempExperience] };
+    });
+  }
+
   render() {
     const { info, experience } = this.state;
 
@@ -98,6 +107,7 @@ class Main extends Component {
           experience={experience}   
           changeExperience={this.handleExperienceChange}
           addExperience={this.handleAddExperience}    
+          deleteExperience={this.handleDeleteExperience}
         />
         <CVDisplay 
           info={info}

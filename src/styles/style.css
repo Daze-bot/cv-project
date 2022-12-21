@@ -126,10 +126,44 @@ main {
 
 .personalInfo p,
 .experienceHistory > p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 20px;
   text-decoration: underline;
+}
+
+.infoForm {
+  border: 1px solid black;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.addExpBtn {
+  position: relative;
+  border: none;
+  background-color: var(--marginals-background-color);
+  filter: opacity(.8);
+  padding: 6px 18px;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.addExpBtn:hover {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 20%), 0 4px 10px rgb(0 0 0 / 20%);
+  filter: opacity(1);
+}
+
+.addExpBtn:active {
+  box-shadow: none;
+  transform: translateY(2px);
+  filter: opacity(1);
 }
 
 .experienceForm > p {
@@ -137,10 +171,33 @@ main {
   margin-bottom: 10px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.6);
+  font-size: 1.2rem;
 }
 
 .experienceForm {
   margin-bottom: 30px;
+  position: relative;
+  border: 1px solid black;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.deleteBtn {
+  width: 45px;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.deleteBtn:hover {
+  scale: 1.05;
+}
+
+.deleteBtn:active {
+  transform: translateY(1px);
 }
 
 footer {

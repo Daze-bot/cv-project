@@ -11,7 +11,8 @@ class Experience extends Component {
     const {
       experience,
       changeExperience,
-      addExperience
+      addExperience,
+      deleteExperience,
     } = this.props;
 
     let experienceItems = experience.map((item, index) => (
@@ -20,7 +21,8 @@ class Experience extends Component {
         key={item.id}
         id={item.id}
         experience={item}
-        changeExperience={changeExperience} 
+        changeExperience={changeExperience}
+        deleteExperience={deleteExperience}
       />
     ));
 
@@ -28,7 +30,9 @@ class Experience extends Component {
       <div className="experienceHistory">
         <p>Experience</p>
         {experienceItems}
-        <button onClick={addExperience}>Add Experience</button>
+        <div className="btnContainer">
+          <button className="addExpBtn" onClick={addExperience}>Add Experience</button>
+        </div>
       </div>
     );
   }

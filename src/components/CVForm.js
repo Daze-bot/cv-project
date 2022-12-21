@@ -14,7 +14,8 @@ class CVForm extends Component {
       changeInfo,
       experience,
       changeExperience,
-      addExperience
+      addExperience,
+      deleteExperience
     } = this.props;
 
     return (
@@ -27,6 +28,7 @@ class CVForm extends Component {
           experience={experience}
           changeExperience={changeExperience}
           addExperience={addExperience}
+          deleteExperience={deleteExperience}
         />
       </div> 
     );
