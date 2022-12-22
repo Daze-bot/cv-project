@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 import Experience from "./Experience";
+import Education from "./Education";
 import Info from "./Info";
 
 class CVForm extends Component {
@@ -15,7 +16,11 @@ class CVForm extends Component {
       experience,
       changeExperience,
       addExperience,
-      deleteExperience
+      deleteExperience,
+      education,
+      changeEducation,
+      addEducation,
+      deleteEducation,
     } = this.props;
 
     return (
@@ -29,6 +34,12 @@ class CVForm extends Component {
           changeExperience={changeExperience}
           addExperience={addExperience}
           deleteExperience={deleteExperience}
+        />
+        <Education
+          education={education}
+          changeEducation={changeEducation}
+          addEducation={addEducation}
+          deleteEducation={deleteEducation}
         />
       </div> 
     );

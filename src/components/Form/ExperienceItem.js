@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
-import Delete from '../imgs/delete.svg';
+import Delete from '../../imgs/delete.svg';
 
 class ExperienceItem extends Component {
   constructor(props) {

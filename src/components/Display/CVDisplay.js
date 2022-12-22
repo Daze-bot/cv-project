@@ -7,7 +7,7 @@ class CVDisplay extends Component {
   }
 
   render() {
-    const { info } = this.props;
+    const { info, experience, education } = this.props;
 
     return (
       <div className="CVDisplay">
@@ -21,6 +21,8 @@ class CVDisplay extends Component {
         <p>{info.description}</p>
         {/* NEED TO FIX - Custom IMG is not loading in display */}
         <img src={info.avatar} alt="Avatar"></img>
+        <p>{experience[0].company}</p>
+        <p>{education[0].school}</p>
       </div> 
     );
   }

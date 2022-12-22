@@ -119,14 +119,16 @@ main {
 }
 
 .personalInfo,
-.experienceHistory {
+.experienceHistory,
+.educationHistory {
   margin-top: 10px;
   margin-bottom: 50px;
 }
 
 .personalInfo p,
-.experienceHistory > p {
-  font-size: 1.5rem;
+.experienceHistory > p,
+.educationHistory > p {
+  font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 20px;
   text-decoration: underline;
@@ -143,7 +145,8 @@ main {
   justify-content: center;
 }
 
-.addExpBtn {
+.addExpBtn,
+.addEduBtn {
   position: relative;
   border: none;
   background-color: var(--marginals-background-color);
@@ -155,18 +158,21 @@ main {
   cursor: pointer;
 }
 
-.addExpBtn:hover {
+.addExpBtn:hover,
+.addEduBtn:hover {
   box-shadow: 0 2px 4px rgb(0 0 0 / 20%), 0 4px 10px rgb(0 0 0 / 20%);
   filter: opacity(1);
 }
 
-.addExpBtn:active {
+.addExpBtn:active,
+.addEduBtn:active {
   box-shadow: none;
   transform: translateY(2px);
   filter: opacity(1);
 }
 
-.experienceForm > p {
+.experienceForm > p,
+.educationForm > p {
   text-align: center;
   margin-bottom: 10px;
   font-weight: 700;
@@ -174,7 +180,8 @@ main {
   font-size: 1.2rem;
 }
 
-.experienceForm {
+.experienceForm,
+.educationForm {
   margin-bottom: 30px;
   position: relative;
   border: 1px solid black;
@@ -198,6 +205,10 @@ main {
 
 .deleteBtn:active {
   transform: translateY(1px);
+}
+
+.CVDisplay > p {
+  word-wrap: break-word;
 }
 
 footer {
