@@ -4,6 +4,7 @@ import CVForm from "./Form/CVForm";
 import CVDisplay from "./Display/CVDisplay";
 import Stock from '../imgs/stock-avatar.svg';
 import uniqid from "uniqid";
+import ReactToPrint from "react-to-print";
 
 class Main extends Component {
   constructor(props) {
@@ -184,7 +185,13 @@ class Main extends Component {
           addEducation={this.handleAddEducation}
           deleteEducation={this.handleDeleteEducation}
         />
-        <CVDisplay 
+        <ReactToPrint
+          trigger={() => {
+            return <button className="printBtn">Print PDF</button>;
+          }}
+          content={() => this.componentRef}
+        />
+        <CVDisplay ref={el => (this.componentRef = el)} 
           info={info}
           experience={experience}
           education={education}

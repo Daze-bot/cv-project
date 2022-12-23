@@ -420,6 +420,31 @@ footer a:hover {
   filter: brightness(.8);
 }
 
+.printBtn {
+  position: fixed;
+  top: 25px;
+  right: 10px;
+  z-index: 100;
+  border: none;
+  background-color: var(--secondary-background-color);
+  filter: opacity(.8);
+  padding: 11px 18px;
+  color: var(--marginals-background-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.printBtn:hover {
+  filter: opacity(1);
+}
+
+.printBtn:active {
+  transform: translateY(2px);
+  filter: opacity(1);
+}
+
 @media only screen and (max-width: 1500px) {
   main {
     display: flex;
@@ -436,5 +461,15 @@ footer a:hover {
   .CVDisplay {
     max-width: 1000px;
     margin: 0 auto;
+  }
+}
+
+@media print {
+  .CVDisplay {
+    width: 215mm;
+    min-height: 279mm;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: none;
   }
 }
