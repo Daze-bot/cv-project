@@ -21,6 +21,7 @@ class Main extends Component {
         website: '',
         description: '',
         avatar: Stock,
+        avatarType: 'default',
       },
       experience: [
         {
@@ -45,6 +46,7 @@ class Main extends Component {
       ],
     }
 
+    this.handleAvatarChange=this.handleAvatarChange.bind(this);
     this.handleInfoChange = this.handleInfoChange.bind(this);
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.handleAddExperience = this.handleAddExperience.bind(this);
@@ -52,6 +54,36 @@ class Main extends Component {
     this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddEducation = this.handleAddEducation.bind(this);
     this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
+  }
+
+  handleAvatarChange(e) {
+    const file = e.target.files[0];
+
+    if (!file) {
+      this.setState((state) => ({
+        info: {
+          ...state.info,
+          avatar: Stock,
+          avatarType: 'default',
+        }
+      }))
+    }
+
+    const reader = new FileReader();
+
+    reader.addEventListener('load', () => {
+      this.setState((state) => ({
+        info: {
+          ...state.info,
+          avatar: reader.result,
+          avatarType: 'userAvatar',
+        }
+      }))
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
   }
 
   handleInfoChange(e) {
@@ -142,6 +174,7 @@ class Main extends Component {
         <CVForm 
           info={info}
           changeInfo={this.handleInfoChange}
+          changeAvatar={this.handleAvatarChange}
           experience={experience}   
           changeExperience={this.handleExperienceChange}
           addExperience={this.handleAddExperience}    

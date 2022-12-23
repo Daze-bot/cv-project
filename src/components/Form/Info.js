@@ -10,6 +10,7 @@ class Info extends Component {
     const {
       info,
       changeInfo,
+      changeAvatar,
     } = this.props;
 
     return (
@@ -100,7 +101,7 @@ class Info extends Component {
           />
           <label htmlFor="infoAvatar">Add Photo</label>
           <input
-            onChange={changeInfo}
+            onChange={changeAvatar}
             type="file"
             name="avatar"
             id="infoAvatar"

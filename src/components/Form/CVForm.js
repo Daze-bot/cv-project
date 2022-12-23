@@ -13,6 +13,7 @@ class CVForm extends Component {
     const {
       info,
       changeInfo,
+      changeAvatar,
       experience,
       changeExperience,
       addExperience,
@@ -28,6 +29,7 @@ class CVForm extends Component {
         <Info
           info={info}
           changeInfo={changeInfo}
+          changeAvatar={changeAvatar}
         />
         <Experience
           experience={experience}
