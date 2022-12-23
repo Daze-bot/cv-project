@@ -265,7 +265,8 @@ main {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7454%) hue-rotate(268deg) brightness(118%) contrast(101%);
 }
 
-.sidebarWebsite a {
+.sidebarWebsite a,
+.infoDescription {
   word-wrap: break-word;
   overflow-wrap: anywhere;
 }
@@ -419,7 +420,7 @@ footer a:hover {
   filter: brightness(.8);
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1500px) {
   main {
     display: flex;
     flex-direction: column;
@@ -430,5 +431,10 @@ footer a:hover {
   .CVDisplay {
     overflow-x: visible;
     overflow-y: visible;
+  }
+
+  .CVDisplay {
+    max-width: 1000px;
+    margin: 0 auto;
   }
 }
